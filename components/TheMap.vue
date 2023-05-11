@@ -4,8 +4,11 @@
 
 <script setup>
 const map = ref(null)
+const { data : datas } = await useFetch('http://localhost/api/radar-location')
+  
 
 onMounted(() => {
+
   const mapDiv = L.map(map.value, {
     attributionControl: false,
     // zoomAnimation:false,
@@ -22,6 +25,8 @@ onMounted(() => {
   )
   mapDiv.addLayer(backgroundLayer)
   mapDiv.setMaxBounds([[8, 93], [-13.2, 143.8]])
+
+
 //overlay gambar
 let imageUrl = 'https://www.linkpicture.com/q/cl_20210101_000010.png';
 let errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';
@@ -34,18 +39,35 @@ let imageOverlay = L.imageOverlay(imageUrl, latLngBounds, {
     interactive: true
 }).addTo(mapDiv);
 
-  //membuat buletan pada gsmap
-  let circle = L.circle([ -6.484708, 106.837975], {
+
+  
+
+  //membuat bulatan pada gsmap
+datas.value.map(data => {
+  console.log(data)
+  let circle = L.circle([ data.radar_lat, data.radar_lon], {
     color: 'red',
     fillOpacity: 0.5,
     radius: 5
 }).addTo(mapDiv);
-
-  let radiusradar = L.circle([ -6.484708, 106.837975], {
+  let radiusradar = L.circle([data.radar_lat, data.radar_lon], {
     color: 'grey',
     fillOpacity: 0.5,
-    radius: 30000
+    radius: 45000
 }).addTo(mapDiv);
+})
+  
+let circle_jakarta = L.circle([ -6.484616, 106.837954], {
+    color: 'red',
+    fillOpacity: 0.5,
+    radius: 5
+}).addTo(mapDiv);
+  let radiusradar_jakarta = L.circle([-6.484616, 106.837954], {
+    color: 'grey',
+    fillOpacity: 0.5,
+    radius: 45000
+}).addTo(mapDiv);
+
 })
 
 </script>
@@ -56,4 +78,5 @@ let imageOverlay = L.imageOverlay(imageUrl, latLngBounds, {
   background-color: #f5f6f4;
   z-index: 10;
 }
+
 </style>

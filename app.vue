@@ -1,7 +1,7 @@
 <template>
   <!-- <TheHeader></TheHeader>
-  <TheButtons></TheButtons> -->
-  <NuxtPage></NuxtPage>
+    <TheButtons></TheButtons> -->
+    <NuxtPage></NuxtPage>
   <!-- <TheMap></TheMap> -->
 </template>
 

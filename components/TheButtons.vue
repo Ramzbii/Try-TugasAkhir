@@ -1,40 +1,33 @@
 <template>
     <div class="main-buttons">
         <!-- <NuxtLink class="hover:text-blue-500 hover:underline"  to="/"> Home </NuxtLink> -->
-        <NuxtLink class="button" :to="{ name: 'legend' }  ">
-            <div class="bulat">
-                <img class="logo-button-legend" src="../src/img/legend.png">    
+        <NuxtLink class="button" :to="{ name: 'areaPantauan' }  ">
+            <div class="button-circle">
+                <Icon class="button-logo" name="ic:baseline-location-on"/> 
             </div>
-            <p class="tulisan">Legend</p>
+            <p class="tulisan">Area Pantauan</p>
         </NuxtLink>
-        <NuxtLink class="button" :to="{ name: 'point' }">
-            <div class="bulat">
-                <img class="logo-button-point" src="../src/img/point.png">    
+        <NuxtLink class="button" :to="{ name: 'history' }">
+            <div class="button-circle">
+                <Icon class="button-logo" name="ic:baseline-history"/>
             </div>
-            <p class="tulisan">Point</p>
+            <p class="tulisan">History</p>
         </NuxtLink>
-        <NuxtLink class="button" :to="{ name: 'rain' }">
-            <div class="bulat">
-                <img class="logo-button-rain" src="../src/img/rain.png">    
+        <NuxtLink class="button" :to="{ name: 'prediksi' }">
+            <div class="button-circle">
+                <Icon class="button-logo" name="ic:baseline-batch-prediction"/>
             </div>
-
-            <p class="tulisan">Rain</p>
-        </NuxtLink>
-        <NuxtLink class="button" :to="{ name: 'flood' }">
-            <div class="bulat">
-                <img class="logo-button-flood" src="../src/img/flood.png">    
-            </div>
-            <p class="tulisan">Flood</p>
+            <p class="tulisan">Prediksi</p>
         </NuxtLink>
         <NuxtLink class="button" :to="{ name: 'gsmap' }" >
-            <div class="bulat">
-                <img class="logo-button-gsmap" src="../src/img/satelite.png">    
+            <div class="button-circle">
+                <Icon class="button-logo" name="ic:baseline-satellite-alt"/>
             </div>
             <p class="tulisan">Satelite</p> 
         </NuxtLink>
         <NuxtLink class="button" :to="{ name: 'qpe' }">
-            <div class="bulat">
-                <img class="logo-button-dbz" src="../src/img/dbz.png">       
+            <div class="button-circle">
+               <Icon class="button-logo" name="ic:baseline-area-chart"/>
             </div>
             <p class="tulisan">QPE</p>
         </NuxtLink>
@@ -55,7 +48,6 @@
     right: 2%;
     
 }
-
 .button {
     width: 100%;
     height: 50px;
@@ -67,8 +59,7 @@
     justify-content: right;
     align-items: center;
 }
-
-.bulat {
+.button-circle {
     width: 40px;
     height: 40px;
     background: #4C4A4A;
@@ -77,19 +68,21 @@
     text-align: right;
     position: relative;
 }
-
+.button-logo{
+    width: 25px;
+    height: 25px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);   
+}
 .button:hover .tulisan {
     background-color:#4C4A4A;
     border-radius: 10px;
     opacity: 70%;
 }
-.logo-button-legend{
-    width: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-}
+
 /* .logo-button-legend:hover{
   animation-name: spin;
   animation-duration: 1000ms;
@@ -107,57 +100,6 @@
 } */
 
 
-.logo-button-point{
-    width: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-}
-
-.logo-button-rain{
-    width: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-}
-
-.logo-button-flood{
-    width: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-}
-
-.logo-button-gsmap{
-    width: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-}
-
-.logo-button-dbz{
-    width: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-}
-
-/* .logo-button-dbz{
-    position: absolute;
-    right: 6px;
-    margin-top: 10px;
-    width: 15%;
-} */
-
-.logo-button-dbz:hover{
-
-}
-
 
 .button p {
     font-size: 15px;
@@ -166,14 +108,6 @@
     color: white;
     text-shadow: 2px 2px 3px #4C4A4A;
     position: relative;
-}
-
-/* .bulat:hover {
-   opacity: 20%;
-} */
-
-.button p:hover {
-  color: #4C4A4A;
 }
 
 </style>

@@ -1,7 +1,6 @@
 <template>
     <div>
-        <TheHeader></TheHeader>
-        <TheButtons></TheButtons>
-        <slot />
+       ini default
+       <slot />
     </div>
 </template>

@@ -1,11 +1,25 @@
 <template>
   <div class="header">
+  <!-- <div class="header">
+    <ul class="menu">
+    <li class="menuItem">>Home</li>
+    <li class="menuItem">Profile</li>
+    <li class="menuItem">>About</li> 
+    <li class="menuItem">Contacts</li>
+    </ul>
+      <button class="hamburger">
+        <i>
+          <Icon class="menuicon" name="ic:baseline-dehaze"/>
+        </i>
+        <i>
+          <Icon class="closeicon" name="ic:baseline-cancel"/>
+        </i>
+      </button> -->
+    
+    
     <NuxtLink class="login" :to="{ name: 'login' }"> Login </NuxtLink>
-    <NuxtLink class="hover:text-blue-500 hover:underline" to="/"> <img class="logo_santanu" src="../src/img/logo-santanu.png" /> </NuxtLink>
-
-      <!-- <NuxtLink class="hover:text-blue-500 hover:underline" to="/"> Home </NuxtLink> -->
-      <NuxtLink class="about" :to="{ name: 'about' }"> Tentang Kami </NuxtLink>
-      <!-- <NuxtLink class="hover:text-blue-500 hover:underline" :to="{ name: 'contact' }"> Contact </NuxtLink> -->
+    <NuxtLink to="/"> <img class="logo_santanu" src="../src/img/logo-santanu.png" /> </NuxtLink>
+    <NuxtLink class="about" :to="{ name: 'about' }"> Tentang Kami </NuxtLink>
     
   </div>
 </template>
@@ -58,4 +72,49 @@
   color: blue;
 }
 
+/* .menuItem {
+  display: block;
+  margin: 2rem 4rem;
+  font-size: 1.8rem;
+  color: white;
+  text-decoration: none;
+}
+
+.menuItem:hover {
+  text-decoration: underline;
+}
+
+.hamburger {
+  position: fixed;
+  z-index: 100;
+  top: 1rem;
+  right: 1rem;
+  padding: 4px;
+  border: black solid 1px;
+  background: white;
+  cursor: pointer;
+}
+
+.closeIcon {
+  display: none;
+}
+
+.menu {
+  position: fixed;
+  transform: translateY(-100%);
+  transition: transform 0.2s;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background: black;
+  color: white;
+  list-style: none;
+  padding-top: 4rem;
+}
+
+.showMenu {
+  transform: translateY(0);
+} */
 </style>
